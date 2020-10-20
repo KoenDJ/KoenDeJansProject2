@@ -1,0 +1,20 @@
+﻿<Window x:Class="KoenDeJansProject2.Administrator_Overzicht"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KoenDeJansProject2"
+        mc:Ignorable="d"
+         Title="Administrator_overzicht" Height="757.135" Width="979.146">
+        <Grid Margin="0,0,7,8">
+    <Button Content="Alles Klanten" Name="btnKlanten" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Margin="20,20,0,0" Height="65" Click="btnKlanten_Click"/>
+    <Button Content="Alles Leveranciers " Name="btnLeveranciers" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Margin="20,110,0,0" Height="65" Click="btnLeveranciers_Click" />
+    <Button Content="Alles Producten" Name="btnProducten" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Margin="20,200,0,0" Height="65" Click="btnProducten_Click"/>
+    <Button Content="Alles Bestellingen" Name="btnBestellingen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Margin="20,290,0,0" Height="65" Click="btnBestellingen_Click" />
+    <Button Content="Alles BestellingProducten" Name="btnBestellingProducten" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Margin="20,380,0,0" Height="65" Click="btnBestellingProducten_Click" />
+    <Button Content="Alles Personeelsleden" Name="btnPersoneel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Margin="20,470,0,0" Height="65" Click="btnPersoneel_Click"/>
+    <Button Content="Overzicht van Categorieën" Name="btnCatagorie" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Margin="20,560,0,0" Height="65" Click="btnCatagorie_Click"/>
+    <DataGrid HorizontalAlignment="Left" IsReadOnly="True" Name="dgOverzicht" Height="644" VerticalAlignment="Top" Width="706" Margin="242,18,0,0"/>
+
+    </Grid>
+</Window>

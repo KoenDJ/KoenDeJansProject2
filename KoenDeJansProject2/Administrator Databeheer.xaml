@@ -1,0 +1,25 @@
+﻿<Window x:Class="KoenDeJansProject2.Administrator_Databeheer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KoenDeJansProject2"
+        mc:Ignorable="d"
+        Title="Administrator_Databeheer" Height="200" Width="200">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Data" Click="MenuItem_Click" >
+                <MenuItem Header="_Leverancier" Name="mnLeverancier" Click="mnLeverancier_Click" />
+                <MenuItem Header="_Klant" Name="mnKlant" Click="mnKlant_Click"  />
+                <MenuItem Header="_Product" Name="mnProduct" Click="mnProduct_Click" />
+                <MenuItem Header="_Categorie" Name="mnCategorie" Click="mnCategorie_Click" />
+                <MenuItem Header="_Personeelslid" Name="mnPersoneelslid" Click="mnPersoneelslid_Click" />
+                <MenuItem Header="_Bestelling" Name="mnBestelling" Click="mnBestelling_Click" />
+                <MenuItem Header="_BestellingProduct" Name="mnBestellingProduct" />
+                <Separator />
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+        </Menu>
+        <TextBox AcceptsReturn="True" />
+    </DockPanel>
+</Window>
