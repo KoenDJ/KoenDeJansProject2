@@ -36,7 +36,8 @@ namespace KoenDeJansProject2
 
         private void mnKlant_Click(object sender, RoutedEventArgs e)
         {
-
+            Databeheer_Klant Dataklant = new Databeheer_Klant();
+            Dataklant.ShowDialog();
         }
 
         private void mnProduct_Click(object sender, RoutedEventArgs e)

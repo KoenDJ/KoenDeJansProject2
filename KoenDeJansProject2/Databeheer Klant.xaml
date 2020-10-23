@@ -1,0 +1,42 @@
+﻿<Window x:Class="KoenDeJansProject2.Databeheer_Klant"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KoenDeJansProject2"
+        mc:Ignorable="d"
+        Title="Databeheer_Klant" Height="567.174" Width="1533.103">
+    <Grid Margin="0,0,-194,10">
+        <Label Content="KlantID :" FontFamily="Arial" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="860,20,0,0"/>
+        <Label Content="Voornaam :" HorizontalAlignment="Left" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Margin="860,60,0,0"/>
+        <Label Content="Achternaam :" HorizontalAlignment="Left" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Margin="860,100,0,0"/>
+        <Label Content="Straatnaam :" HorizontalAlignment="Left" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Margin="860,140,0,0"/>
+        <Label Content="Huisnummer :" HorizontalAlignment="Left" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Margin="860,180,0,0"/>
+        <Label Content="Bus :" HorizontalAlignment="Left" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Margin="860,220,0,0"/>
+        <Label Content="Postcode :" HorizontalAlignment="Left" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Margin="860,260,0,0"/>
+        <Label Content="Gemeente :" HorizontalAlignment="Left" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Margin="860,300,0,0"/>
+        <Label Content="Telefoonnummer :" HorizontalAlignment="Left" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Margin="860,340,0,0"/>
+        <Label Content="Emailadres :" HorizontalAlignment="Left" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Margin="860,380,0,0"/>
+        <Label Content="Aangemaakt op  :" HorizontalAlignment="Left" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Margin="860,420,0,0"/>
+        <Label Content="Opmerking  :" HorizontalAlignment="Left" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Margin="860,460,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Name="txtID" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Width="150" Margin="1070,20,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Name="txtVoornaam" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Width="150" Margin="1070,60,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Name="txtAchternaam" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Width="150" Margin="1070,100,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Name="txtStraatnaam" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Width="150" Margin="1070,140,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Name="txtHuisnr" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Width="150" Margin="1070,180,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Name="txtBus" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Width="150" Margin="1070,220,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Name="txtPostcode" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Width="150" Margin="1070,260,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Name="txtGemeente" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Width="150" Margin="1070,300,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Name="txtTelefoonnr" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Width="150" Margin="1070,340,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Name="txtMail" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Width="150" Margin="1070,380,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Name="txtAangemaaktOp" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Width="150" Margin="1070,420,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Name="txtOpmerking" FontFamily="Arial" FontSize="18" VerticalAlignment="Top" Width="150" Margin="1070,460,0,0"/>
+        <Button Content="Overzicht" Name="btnOverzicht" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Arial" FontSize="18" Width="195" Margin="1250,20,0,0" Height="40" Click="btnOverzicht_Click"/>
+        <Button Content="Verwijderen" Name="btnVerwijderen" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Arial" FontSize="18" Width="195" Margin="1250,80,0,0" Height="40" Click="btnVerwijderen_Click" />
+        <Button Content="Toevoegen" Name="btnToevoegen" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Arial" FontSize="18" Width="195" Margin="1250,140,0,0" Height="40" Click="btnToevoegen_Click" />
+        <Button Content="Wijzigen" Name="btnWijzigen" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Arial" FontSize="18" Width="195" Height="40" Margin="1250,200,0,0" Click="btnWijzigen_Click"  />
+        <Button Content="Een klant zoeken" Name="btn1tonen" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Arial" FontSize="18" Width="195" Height="40" Margin="1250,260,0,0" Click="btn1tonen_Click"/>
+        <DataGrid HorizontalAlignment="Left" Name="grdKlanten" Height="510" VerticalAlignment="Top" Width="850" Margin="5,7,0,0" SelectionChanged="grdKlanten_SelectionChanged"/>
+    </Grid>
+    
+</Window>
