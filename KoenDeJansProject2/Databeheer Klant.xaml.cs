@@ -165,15 +165,15 @@ namespace KoenDeJansProject2
                 txtVoornaam.Text = k.Voornaam;
                 txtAchternaam.Text = k.Achternaam;
                 txtStraatnaam.Text = k.Straatnaam;
-                txtBus.Text = k.Bus.ToString();
-                txtMail.Text = k.Emailadres.ToString();
+                txtBus.Text = k.Bus;
+                txtMail.Text = k.Emailadres;
                 txtGemeente.Text = k.Gemeente;
                 txtHuisnr.Text = k.Huisnummer.ToString();
                 txtID.Text = k.KlantID.ToString();
                 txtPostcode.Text = k.Postcode.ToString();
-                txtTelefoonnr.Text = k.Telefoonnummer.ToString();
+                txtTelefoonnr.Text = k.Telefoonnummer;
                 txtAangemaaktOp.Text = k.AangemaaktOp.ToString();
-                txtOpmerking.Text = k.Opmerking.ToString();
+                txtOpmerking.Text = k.Opmerking;
                 DataManager.KlantWijzigen(k);
             }
         }
