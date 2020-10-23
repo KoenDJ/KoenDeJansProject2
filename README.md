@@ -10,3 +10,9 @@ Reeds gedaan:
 
 Nu zal ik hier de komende dagen en verder werken.  Ik zal beginnen met de data bruikbaar te maken
 
+update 23/10/2020
+
+- verder gewerkt aan overzicht van de Date van de administrtor.
+- alles in het overzicht werkt, ik ben erin geslaagd van de data uit de database in een overzicht te brengen
+- het bij Databeheer een window gemaakt voor aanpassingen van de klanten.  Hier heb ik een paar probleemjes
+  maar we werken eraan om dit op te lossen
