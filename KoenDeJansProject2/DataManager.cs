@@ -82,6 +82,62 @@ namespace KoenDeJansProject2
             }
         }
 
+        // leverancier toevoegen
+        public static int InsertLeverancier(Leverancier l)
+        {
+            using (var Mijn_LeverancierEntities = new Individueel_ProjectEntities())
+            {
+                Mijn_LeverancierEntities.Leveranciers.Add(l);
+                if (0 < Mijn_LeverancierEntities.SaveChanges())
+                {
+                    return Convert.ToInt32(l.LeverancierID);
+                }
+                return 0;
+            }
+        }
+
+        //leverancier verwijderen
+        public static int DeleteLeverancier(Leverancier l)
+        {
+            using (var Mijn_LeverancierEntities = new Individueel_ProjectEntities())
+            {
+                var query = from leverancier in Mijn_LeverancierEntities.Leveranciers
+                            where leverancier.LeverancierID == l.LeverancierID
+                            select leverancier;
+                Leverancier ln = query.FirstOrDefault();
+                Mijn_LeverancierEntities.Leveranciers.Remove(ln);
+                return Mijn_LeverancierEntities.SaveChanges();
+            }
+        }
+
+        //leverancier zoeken per ID
+        public static Leverancier GetLeverancierById(int lID)
+        {
+            using (var Mijn_LeverancierEntities = new Individueel_ProjectEntities())
+            {
+                var query = from leverancier in Mijn_LeverancierEntities.Leveranciers
+                            where leverancier.LeverancierID == lID
+                            select leverancier;
+                var t = query.FirstOrDefault();
+                return t;
+            }
+        }
+
+        //leveranciers gegevens wijzigen 
+        public static int LeverancierWijzigen(Leverancier l)
+        {
+            using (var Mijn_LeverancierEntities = new Individueel_ProjectEntities())
+            {
+                Mijn_LeverancierEntities.Entry(l).State = System.Data.Entity.EntityState.Modified;
+                return Mijn_LeverancierEntities.SaveChanges();
+            }
+        }
+
+
+
+
+
+
         // alle methodes om product gegevens in database te krijgen en bewerken
 
         // ophalen van producten

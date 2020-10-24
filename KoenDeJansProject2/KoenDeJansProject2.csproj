@@ -82,6 +82,9 @@
     <Compile Include="Databeheer Klant.xaml.cs">
       <DependentUpon>Databeheer Klant.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Databeheer Leverancier.xaml.cs">
+      <DependentUpon>Databeheer Leverancier.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataManager.cs" />
     <Compile Include="IndividueelProject2DataModel.cs">
       <AutoGen>True</AutoGen>
@@ -115,6 +118,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Databeheer Klant.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Databeheer Leverancier.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

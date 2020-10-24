@@ -35,7 +35,7 @@
         <Button Content="Verwijderen" Name="btnVerwijderen" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Arial" FontSize="18" Width="195" Margin="1250,80,0,0" Height="40" Click="btnVerwijderen_Click" />
         <Button Content="Toevoegen" Name="btnToevoegen" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Arial" FontSize="18" Width="195" Margin="1250,140,0,0" Height="40" Click="btnToevoegen_Click" />
         <Button Content="Wijzigen" Name="btnWijzigen" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Arial" FontSize="18" Width="195" Height="40" Margin="1250,200,0,0" Click="btnWijzigen_Click"  />
-        <Button Content="Een klant zoeken" Name="btn1tonen" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Arial" FontSize="18" Width="195" Height="40" Margin="1250,260,0,0" Click="btn1tonen_Click"/>
+        <Button Content="Een klant zoeken via ID" Name="btn1tonen" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Arial" FontSize="18" Width="195" Height="40" Margin="1250,260,0,0" Click="btn1tonen_Click"/>
         <DataGrid HorizontalAlignment="Left" Name="grdKlanten" Height="510" VerticalAlignment="Top" Width="850" Margin="5,7,0,0" SelectionChanged="grdKlanten_SelectionChanged"/>
     </Grid>
     

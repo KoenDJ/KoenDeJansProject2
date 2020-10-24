@@ -27,6 +27,7 @@ namespace KoenDeJansProject2
             InitializeComponent();
         }
 
+        //overzicht van de klanten
         private void btnOverzicht_Click(object sender, RoutedEventArgs e)
         {
             grdKlanten.ItemsSource = null;
@@ -34,62 +35,73 @@ namespace KoenDeJansProject2
 
         }
 
+        //verwijderen van klant
         private void btnVerwijderen_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("Bent u zeker dat u deze klant wil verwijderen", "Opgelet", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
-                
-                    Klant k = DataManager.GetKlantById(Convert.ToInt32(txtID.Text));
+
+                Klant k = DataManager.GetKlantById(Convert.ToInt32(txtID.Text));
+                {
+                    int ok = DataManager.DeleteKlant(k);
+                    if (ok > 0)
                     {
-                        int ok = DataManager.DeleteKlant(k);
-                        if (ok > 0)
-                        {
-                            grdKlanten.ItemsSource = null;
-                            grdKlanten.ItemsSource = DataManager.GetKlanten();
-                            MessageBox.Show("Het verwijderen van de klant is gelukt");
-                            Opruimen();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Het verwijderen van de klant is niet gelukt");
-                            Opruimen();
-                        }
-                    }                              
+                        grdKlanten.ItemsSource = null;
+                        grdKlanten.ItemsSource = DataManager.GetKlanten();
+                        MessageBox.Show("Het verwijderen van de klant is gelukt");
+                        Opruimen();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Het verwijderen van de klant is niet gelukt");
+                        Opruimen();
+                    }
+                }
             }
         }
 
+        //toevoegen van klant
         private void btnToevoegen_Click(object sender, RoutedEventArgs e)
         {
-            Klant k = new Klant()
+            try
             {
-                Voornaam = txtVoornaam.Text,
-                Achternaam = txtAchternaam.Text,
-                AangemaaktOp = Convert.ToDateTime(txtAangemaaktOp.Text),
-                Straatnaam = txtStraatnaam.Text,
-                Bus = txtBus.Text, 
-                Emailadres = txtMail.Text,
-                Gemeente = txtGemeente.Text,
-                Huisnummer = txtHuisnr.Text, 
-                KlantID = Convert.ToInt32(txtID.Text),
-                Postcode = txtPostcode.Text,
-                Telefoonnummer = txtTelefoonnr.Text,
-                Opmerking = txtOpmerking.Text,
-            };
-            int ok = DataManager.InsertKlant(k);
-            if (ok > 0)
-            {
-                grdKlanten.ItemsSource = null;
-                grdKlanten.ItemsSource = DataManager.GetKlanten();
-                MessageBox.Show("Het toevoegen van de klant is gelukt");
-                Opruimen();
+                Klant k = new Klant()
+                {
+                    Voornaam = txtVoornaam.Text,
+                    Achternaam = txtAchternaam.Text,
+                    AangemaaktOp = Convert.ToDateTime(txtAangemaaktOp.Text),
+                    Straatnaam = txtStraatnaam.Text,
+                    Bus = txtBus.Text,
+                    Emailadres = txtMail.Text,
+                    Gemeente = txtGemeente.Text,
+                    Huisnummer = txtHuisnr.Text,
+                    KlantID = Convert.ToInt32(txtID.Text),
+                    Postcode = txtPostcode.Text,
+                    Telefoonnummer = txtTelefoonnr.Text,
+                    Opmerking = txtOpmerking.Text,
+                };
+                int ok = DataManager.InsertKlant(k);
+                if (ok > 0)
+                {
+                    grdKlanten.ItemsSource = null;
+                    grdKlanten.ItemsSource = DataManager.GetKlanten();
+                    MessageBox.Show("Het toevoegen van de klant is gelukt");
+                    Opruimen();
+                }
+                else
+                {
+                    MessageBox.Show("Het toevoegen van de klant is niet gelukt");
+                    Opruimen();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Het toevoegen van de klant is niet gelukt");
+                MessageBox.Show("Er is een fout gebeurd:" + ex.Message);
                 Opruimen();
             }
         }
-
+        
+        //wijzigen van klant
         private void btnWijzigen_Click(object sender, RoutedEventArgs e)
         {
             Klant k = DataManager.GetKlantById(Convert.ToInt32(txtID.Text));
@@ -97,34 +109,34 @@ namespace KoenDeJansProject2
             {
                 if (MessageBox.Show("Bent u zeker dat u de klant op deze manier wilt wijzigen?", "vraag", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
-                    
-                        k.Voornaam = txtVoornaam.Text;
-                        k.Achternaam = txtAchternaam.Text;
-                        k.AangemaaktOp = Convert.ToDateTime(txtAangemaaktOp.Text);
-                        k.Straatnaam = txtStraatnaam.Text;
-                        k.Bus = (txtBus.Text);
-                        k.Emailadres = txtMail.Text;
-                        k.Gemeente = txtGemeente.Text;
-                        k.Huisnummer = (txtHuisnr.Text);
-                        k.KlantID = Convert.ToInt32(txtID.Text);
-                        k.Postcode = txtPostcode.Text;
-                        k.Telefoonnummer = txtTelefoonnr.Text;
-                        k.Opmerking = txtOpmerking.Text;
-                        int ok = DataManager.KlantWijzigen(k);
-                        if (ok > 0)
-                        {
-                            DataManager.GetKlanten().Clear();
-                            grdKlanten.ItemsSource = null;
-                            grdKlanten.ItemsSource = DataManager.GetKlanten();
-                            MessageBox.Show("Het wijzigen van de klant is gelukt");
-                            Opruimen();
-                        }
-                        else
-                        {
-                            MessageBox.Show(" Het wijzigen van de klant is niet gelukt");
-                            Opruimen();
-                        }
-                   
+
+                    k.Voornaam = txtVoornaam.Text;
+                    k.Achternaam = txtAchternaam.Text;
+                    k.AangemaaktOp = Convert.ToDateTime(txtAangemaaktOp.Text);
+                    k.Straatnaam = txtStraatnaam.Text;
+                    k.Bus = (txtBus.Text);
+                    k.Emailadres = txtMail.Text;
+                    k.Gemeente = txtGemeente.Text;
+                    k.Huisnummer = (txtHuisnr.Text);
+                    k.KlantID = Convert.ToInt32(txtID.Text);
+                    k.Postcode = txtPostcode.Text;
+                    k.Telefoonnummer = txtTelefoonnr.Text;
+                    k.Opmerking = txtOpmerking.Text;
+                    int ok = DataManager.KlantWijzigen(k);
+                    if (ok > 0)
+                    {
+                        DataManager.GetKlanten().Clear();
+                        grdKlanten.ItemsSource = null;
+                        grdKlanten.ItemsSource = DataManager.GetKlanten();
+                        MessageBox.Show("Het wijzigen van de klant is gelukt");
+                        Opruimen();
+                    }
+                    else
+                    {
+                        MessageBox.Show(" Het wijzigen van de klant is niet gelukt");
+                        Opruimen();
+                    }
+
                 }
                 Opruimen();
             }
@@ -135,8 +147,37 @@ namespace KoenDeJansProject2
             }
         }
 
+        //zoeken van een klant, enkel via ID van de klant
         private void btn1tonen_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                Klant k = DataManager.GetKlantById(Convert.ToInt32(txtID.Text));
+                if (k != null)
+                {
+                    txtVoornaam.Text = k.Voornaam;
+                    txtAchternaam.Text = k.Achternaam;
+                    txtStraatnaam.Text = k.Straatnaam;
+                    txtBus.Text = k.Bus.ToString();
+                    txtMail.Text = k.Emailadres.ToString();
+                    txtGemeente.Text = k.Gemeente;
+                    txtHuisnr.Text = k.Huisnummer.ToString();
+                    txtID.Text = k.KlantID.ToString();
+                    txtPostcode.Text = k.Postcode.ToString();
+                    txtTelefoonnr.Text = k.Telefoonnummer.ToString();
+                    txtAangemaaktOp.Text = k.AangemaaktOp.ToString();
+                    txtOpmerking.Text = k.Opmerking.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Er staat geen klant met deze ID in de databank");
+                    Opruimen();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -157,24 +198,33 @@ namespace KoenDeJansProject2
             txtTelefoonnr.Clear();
         }
 
+        // geselecteerde rij
         private void grdKlanten_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Klant k = (Klant)grdKlanten.SelectedItem;
-            if (k != null)
+            try
             {
-                txtVoornaam.Text = k.Voornaam;
-                txtAchternaam.Text = k.Achternaam;
-                txtStraatnaam.Text = k.Straatnaam;
-                txtBus.Text = k.Bus;
-                txtMail.Text = k.Emailadres;
-                txtGemeente.Text = k.Gemeente;
-                txtHuisnr.Text = k.Huisnummer.ToString();
-                txtID.Text = k.KlantID.ToString();
-                txtPostcode.Text = k.Postcode.ToString();
-                txtTelefoonnr.Text = k.Telefoonnummer;
-                txtAangemaaktOp.Text = k.AangemaaktOp.ToString();
-                txtOpmerking.Text = k.Opmerking;
-                DataManager.KlantWijzigen(k);
+                Klant k = (Klant)grdKlanten.SelectedItem;
+                if (k != null)
+
+                {
+                    txtVoornaam.Text = k.Voornaam;
+                    txtAchternaam.Text = k.Achternaam;
+                    txtStraatnaam.Text = k.Straatnaam;
+                    txtBus.Text = k.Bus;
+                    txtMail.Text = k.Emailadres;
+                    txtGemeente.Text = k.Gemeente;
+                    txtHuisnr.Text = k.Huisnummer.ToString();
+                    txtID.Text = k.KlantID.ToString();
+                    txtPostcode.Text = k.Postcode.ToString();
+                    txtTelefoonnr.Text = k.Telefoonnummer;
+                    txtAangemaaktOp.Text = k.AangemaaktOp.ToString();
+                    txtOpmerking.Text = k.Opmerking;
+                    DataManager.KlantWijzigen(k);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Gelieve geen lege rij te selecteren.");
             }
         }
     }

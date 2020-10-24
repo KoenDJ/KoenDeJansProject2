@@ -18,6 +18,7 @@ namespace KoenDeJansProject2
     /// Interaction logic for Administrator_Databeheer.xaml
     /// </summary>
     public partial class Administrator_Databeheer : Window
+        // In dit window: klikken op vb leverancier brengt je naar window leverancier
     {
         public Administrator_Databeheer()
         {
@@ -31,7 +32,8 @@ namespace KoenDeJansProject2
 
         private void mnLeverancier_Click(object sender, RoutedEventArgs e)
         {
-
+            Databeheer_Leverancier DataLeverancier = new Databeheer_Leverancier();
+            DataLeverancier.ShowDialog();
         }
 
         private void mnKlant_Click(object sender, RoutedEventArgs e)

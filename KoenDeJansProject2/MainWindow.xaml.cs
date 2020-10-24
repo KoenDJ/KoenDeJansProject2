@@ -54,13 +54,13 @@ namespace KoenDeJansProject2
                         Hide();
                         startscherm.ShowDialog();
                     }
-                    else if (txtNaam.Text == "magazijnier" && txtWachtwoord.Password == "" && cbGebruiker.SelectedValue == "Magazijnier")
+                    else if (txtNaam.Text == "Koen" && txtWachtwoord.Password == "" && cbGebruiker.SelectedValue == "Magazijnier")
                     {
                         Startscherm startscherm = new Startscherm();
                         Hide();
                         startscherm.ShowDialog();
                     }
-                    else if (txtNaam.Text == "verkoper" && txtWachtwoord.Password == "" && cbGebruiker.SelectedValue == "Verkoper")
+                    else if (txtNaam.Text == "koen" && txtWachtwoord.Password == "" && cbGebruiker.SelectedValue == "Verkoper")
                     {
                         Startscherm startscherm = new Startscherm();
                         Hide();
