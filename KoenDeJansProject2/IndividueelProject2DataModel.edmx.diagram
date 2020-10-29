@@ -4,22 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b4f651ea6889436b9b24574802765d27" Name="Diagram1">
-        <EntityTypeShape EntityType="IndividueelProjectModel.Bestelling" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="IndividueelProjectModel.BestellingProduct" Width="1.5" PointX="8.25" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="IndividueelProjectModel.Categorie" Width="1.5" PointX="3.75" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="IndividueelProjectModel.Klant" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="IndividueelProjectModel.Leverancier" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="IndividueelProjectModel.Personeelslid" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="IndividueelProjectModel.Product" Width="1.5" PointX="6" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="IndividueelProjectModel.sysdiagram" Width="1.5" PointX="2.75" PointY="9" IsExpanded="true" />
-        <AssociationConnector Association="IndividueelProjectModel.FK_Bestelling_Klant" ManuallyRouted="false" />
-        <AssociationConnector Association="IndividueelProjectModel.FK_Bestelling_Leverancier" ManuallyRouted="false" />
-        <AssociationConnector Association="IndividueelProjectModel.FK_Bestelling_Personeelslid" ManuallyRouted="false" />
-        <AssociationConnector Association="IndividueelProjectModel.FK_BestellingProduct_Bestelling" ManuallyRouted="false" />
-        <AssociationConnector Association="IndividueelProjectModel.FK_BestellingProduct_Product" ManuallyRouted="false" />
-        <AssociationConnector Association="IndividueelProjectModel.FK_Product_Categorie" ManuallyRouted="false" />
-        <AssociationConnector Association="IndividueelProjectModel.FK_Product_Leverancier" ManuallyRouted="false" />
+      <Diagram DiagramId="9168fcde6c1e400899a5e6a1f1207b14" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Bestelling" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BestellingProduct" Width="1.5" PointX="8.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Categorie" Width="1.5" PointX="3.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Klant" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Leverancier" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Personeelslid" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Product" Width="1.5" PointX="6" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.sysdiagram" Width="1.5" PointX="2.75" PointY="9" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_Bestelling_Klant" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Bestelling_Leverancier" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Bestelling_Personeelslid" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_BestellingProduct_Bestelling" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_BestellingProduct_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Product_Categorie" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Product_Leverancier" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

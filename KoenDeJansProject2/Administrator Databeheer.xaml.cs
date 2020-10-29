@@ -44,22 +44,26 @@ namespace KoenDeJansProject2
 
         private void mnProduct_Click(object sender, RoutedEventArgs e)
         {
-
+            Databeheer_Product DataProduct = new Databeheer_Product();
+            DataProduct.ShowDialog();
         }
 
         private void mnCategorie_Click(object sender, RoutedEventArgs e)
         {
-
+            Databeheer_Categorie DataCategorie = new Databeheer_Categorie();
+            DataCategorie.ShowDialog();
         }
 
         private void mnPersoneelslid_Click(object sender, RoutedEventArgs e)
         {
-
+            Databeheer_Personeelsleden DataPersoneel = new Databeheer_Personeelsleden();
+            DataPersoneel.ShowDialog();
         }
 
         private void mnBestelling_Click(object sender, RoutedEventArgs e)
         {
-
+            Databeheer_Bestelling DataBestelling = new Databeheer_Bestelling();
+            DataBestelling.ShowDialog();
         }
     }
 }

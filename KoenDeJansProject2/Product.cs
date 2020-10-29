@@ -22,7 +22,7 @@ namespace KoenDeJansProject2
     
         public int ProductID { get; set; }
         public string Naam { get; set; }
-        public Nullable<decimal> Inkooppprijs { get; set; }
+        public Nullable<decimal> Inkoopprijs { get; set; }
         public Nullable<double> Marge { get; set; }
         public string Eenheid { get; set; }
         public Nullable<double> BTW { get; set; }

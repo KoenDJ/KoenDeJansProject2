@@ -44,8 +44,10 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -70,6 +72,9 @@
     <Compile Include="Administrator Overzicht.xaml.cs">
       <DependentUpon>Administrator Overzicht.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Bestelling Klant aanmaken.xaml.cs">
+      <DependentUpon>Bestelling Klant aanmaken.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Bestelling.cs">
       <DependentUpon>IndividueelProject2DataModel.tt</DependentUpon>
     </Compile>
@@ -79,17 +84,39 @@
     <Compile Include="Categorie.cs">
       <DependentUpon>IndividueelProject2DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Databeheer Bestelling.xaml.cs">
+      <DependentUpon>Databeheer Bestelling.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Databeheer Categorie.xaml.cs">
+      <DependentUpon>Databeheer Categorie.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Databeheer Klant.xaml.cs">
       <DependentUpon>Databeheer Klant.xaml</DependentUpon>
     </Compile>
     <Compile Include="Databeheer Leverancier.xaml.cs">
       <DependentUpon>Databeheer Leverancier.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Databeheer Personeelsleden.xaml.cs">
+      <DependentUpon>Databeheer Personeelsleden.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Databeheer Product.xaml.cs">
+      <DependentUpon>Databeheer Product.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataManager.cs" />
+    <Compile Include="IndividueelProject2DataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IndividueelProject2DataModel.Context.tt</DependentUpon>
+    </Compile>
     <Compile Include="IndividueelProject2DataModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>IndividueelProject2DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IndividueelProject2DataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IndividueelProject2DataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Klant.cs">
       <DependentUpon>IndividueelProject2DataModel.tt</DependentUpon>
@@ -117,11 +144,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Bestelling Klant aanmaken.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Databeheer Bestelling.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Databeheer Categorie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Databeheer Klant.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Databeheer Leverancier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Databeheer Personeelsleden.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Databeheer Product.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -132,16 +179,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="IndividueelProject2DataModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IndividueelProject2DataModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="IndividueelProject2DataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IndividueelProject2DataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -187,19 +224,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="IndividueelProject2DataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>IndividueelProject2DataModel.Context.cs</LastGenOutput>
       <DependentUpon>IndividueelProject2DataModel.edmx</DependentUpon>
+      <LastGenOutput>IndividueelProject2DataModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="IndividueelProject2DataModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>IndividueelProject2DataModel.edmx</DependentUpon>
       <LastGenOutput>IndividueelProject2DataModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

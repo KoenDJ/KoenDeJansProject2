@@ -13,10 +13,10 @@ namespace KoenDeJansProject2
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Individueel_ProjectEntities : DbContext
+    public partial class Individueel_ProjectEntities2 : DbContext
     {
-        public Individueel_ProjectEntities()
-            : base("name=Individueel_ProjectEntities")
+        public Individueel_ProjectEntities2()
+            : base("name=Individueel_ProjectEntities2")
         {
         }
     

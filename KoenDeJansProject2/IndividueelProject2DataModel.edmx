@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="IndividueelProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Bestelling">
           <Key>
             <PropertyRef Name="BestellingID" />
@@ -44,7 +44,7 @@
           <Property Name="Gemeente" Type="nvarchar" MaxLength="50" />
           <Property Name="Telefoonnummer" Type="nvarchar" MaxLength="50" />
           <Property Name="Emailadres" Type="nvarchar" MaxLength="50" />
-          <Property Name="AangemaaktOp" Type="date" />
+          <Property Name="AangemaaktOp" Type="datetime" />
           <Property Name="Opmerking" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Leverancier">
@@ -74,7 +74,7 @@
           </Key>
           <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Naam" Type="nvarchar" MaxLength="50" />
-          <Property Name="Inkooppprijs" Type="money" />
+          <Property Name="Inkoopprijs" Type="money" />
           <Property Name="Marge" Type="float" />
           <Property Name="Eenheid" Type="nvarchar" MaxLength="50" />
           <Property Name="BTW" Type="float" />
@@ -175,7 +175,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="IndividueelProjectModelStoreContainer">
+        <EntityContainer Name="ModelStoreContainer">
           <EntitySet Name="Bestelling" EntityType="Self.Bestelling" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BestellingProduct" EntityType="Self.BestellingProduct" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categorie" EntityType="Self.Categorie" Schema="dbo" store:Type="Tables" />
@@ -217,7 +217,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="IndividueelProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Bestelling">
           <Key>
             <PropertyRef Name="BestellingID" />
@@ -264,7 +264,7 @@
           <Property Name="Gemeente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Telefoonnummer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Emailadres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AangemaaktOp" Type="DateTime" Precision="0" />
+          <Property Name="AangemaaktOp" Type="DateTime" Precision="3" />
           <Property Name="Opmerking" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Bestellings" Relationship="Self.FK_Bestelling_Klant" FromRole="Klant" ToRole="Bestelling" />
         </EntityType>
@@ -298,7 +298,7 @@
           </Key>
           <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Naam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Inkooppprijs" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Inkoopprijs" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Marge" Type="Double" />
           <Property Name="Eenheid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="BTW" Type="Double" />
@@ -402,7 +402,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Individueel_ProjectEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Individueel_ProjectEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Bestellings" EntityType="Self.Bestelling" />
           <EntitySet Name="BestellingProducts" EntityType="Self.BestellingProduct" />
           <EntitySet Name="Categories" EntityType="Self.Categorie" />
@@ -445,9 +445,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="IndividueelProjectModelStoreContainer" CdmEntityContainer="Individueel_ProjectEntities">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Individueel_ProjectEntities2">
           <EntitySetMapping Name="Bestellings">
-            <EntityTypeMapping TypeName="IndividueelProjectModel.Bestelling">
+            <EntityTypeMapping TypeName="Model.Bestelling">
               <MappingFragment StoreEntitySet="Bestelling">
                 <ScalarProperty Name="BestellingID" ColumnName="BestellingID" />
                 <ScalarProperty Name="DatumOpgemaakt" ColumnName="DatumOpgemaakt" />
@@ -458,7 +458,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BestellingProducts">
-            <EntityTypeMapping TypeName="IndividueelProjectModel.BestellingProduct">
+            <EntityTypeMapping TypeName="Model.BestellingProduct">
               <MappingFragment StoreEntitySet="BestellingProduct">
                 <ScalarProperty Name="BestellingProductID" ColumnName="BestellingProductID" />
                 <ScalarProperty Name="BestellingID" ColumnName="BestellingID" />
@@ -467,7 +467,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Categories">
-            <EntityTypeMapping TypeName="IndividueelProjectModel.Categorie">
+            <EntityTypeMapping TypeName="Model.Categorie">
               <MappingFragment StoreEntitySet="Categorie">
                 <ScalarProperty Name="CategorieID" ColumnName="CategorieID" />
                 <ScalarProperty Name="CategorieNaam" ColumnName="CategorieNaam" />
@@ -475,7 +475,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Klants">
-            <EntityTypeMapping TypeName="IndividueelProjectModel.Klant">
+            <EntityTypeMapping TypeName="Model.Klant">
               <MappingFragment StoreEntitySet="Klant">
                 <ScalarProperty Name="KlantID" ColumnName="KlantID" />
                 <ScalarProperty Name="Voornaam" ColumnName="Voornaam" />
@@ -493,7 +493,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Leveranciers">
-            <EntityTypeMapping TypeName="IndividueelProjectModel.Leverancier">
+            <EntityTypeMapping TypeName="Model.Leverancier">
               <MappingFragment StoreEntitySet="Leverancier">
                 <ScalarProperty Name="LeverancierID" ColumnName="LeverancierID" />
                 <ScalarProperty Name="Contactpersoon" ColumnName="Contactpersoon" />
@@ -508,7 +508,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Personeelslids">
-            <EntityTypeMapping TypeName="IndividueelProjectModel.Personeelslid">
+            <EntityTypeMapping TypeName="Model.Personeelslid">
               <MappingFragment StoreEntitySet="Personeelslid">
                 <ScalarProperty Name="PersoneelslidID" ColumnName="PersoneelslidID" />
                 <ScalarProperty Name="Voornaam" ColumnName="Voornaam" />
@@ -516,11 +516,11 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="IndividueelProjectModel.Product">
+            <EntityTypeMapping TypeName="Model.Product">
               <MappingFragment StoreEntitySet="Product">
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="Naam" ColumnName="Naam" />
-                <ScalarProperty Name="Inkooppprijs" ColumnName="Inkooppprijs" />
+                <ScalarProperty Name="Inkoopprijs" ColumnName="Inkoopprijs" />
                 <ScalarProperty Name="Marge" ColumnName="Marge" />
                 <ScalarProperty Name="Eenheid" ColumnName="Eenheid" />
                 <ScalarProperty Name="BTW" ColumnName="BTW" />
@@ -530,7 +530,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="IndividueelProjectModel.sysdiagram">
+            <EntityTypeMapping TypeName="Model.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
