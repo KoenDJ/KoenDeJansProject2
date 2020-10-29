@@ -237,6 +237,7 @@
       <DependentUpon>IndividueelProject2DataModel.edmx</DependentUpon>
       <LastGenOutput>IndividueelProject2DataModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
